@@ -1961,6 +1961,7 @@ tu_knl_kgsl_load(struct tu_instance *instance, int fd)
    case KGSL_UBWC_4_0:
    case KGSL_UBWC_5_0:
    case KGSL_UBWC_6_0:
+   case KGSL_UBWC_7_0:
       device->ubwc_config.bank_swizzle_levels = 0x6;
       device->ubwc_config.macrotile_mode = FDL_MACROTILE_8_CHANNEL;
       break;

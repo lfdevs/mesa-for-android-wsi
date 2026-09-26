@@ -249,6 +249,7 @@ enum kgsl_user_mem_type {
 #define KGSL_UBWC_4_0	4
 #define KGSL_UBWC_5_0	5
 #define KGSL_UBWC_6_0	6
+#define KGSL_UBWC_7_0	7
 
 /*
  * Reset status values for context

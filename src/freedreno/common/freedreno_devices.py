@@ -1659,5 +1659,28 @@ add_gpus([
         raw_magic_regs = a8xx_base_raw_magic_regs,
     ))
 
+add_gpus([
+        GPUId(chip_id=0x44051401, name="Adreno (TM) 850"), # DRM/MSM
+        GPUId(chip_id=0xffff44051401, name="Adreno (TM) 850"), # DRM/MSM fuse fallback
+        GPUId(chip_id=0xffff44051431, name="Adreno (TM) 850"), # KGSL
+    ], A6xxGPUInfo(
+        CHIP.A8XX,
+        [a7xx_base, a7xx_gen3, a8xx_base, a8xx_gen2,
+         GPUProps(shading_rate_matches_vk = True)],
+        num_ccu = 6,
+        num_slices = 3,
+        tile_align_w = 96,
+        tile_align_h = 32,
+        tile_max_w = 16416,
+        tile_max_h = 16384,
+        num_vsc_pipes = 32,
+        cs_shared_mem_size = 32 * 1024,
+        wave_granularity = 2,
+        fibers_per_sp = 128 * 2 * 16,
+        highest_bank_bit = 16,
+        magic_regs = dict(),
+        raw_magic_regs = a8xx_base_raw_magic_regs,
+    ))
+
 if __name__ == "__main__":
     main()
